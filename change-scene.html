@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/base.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+    <link rel="stylesheet" href="./font/fontawesome-free-6.4.2-web/css/all.min.css">
+    <title>Thông tin chi tiết các loại sữa</title>
+    <style>
+        .fa-chevron-left:hover {
+            background-color: var(--bule-color);
+            min-width: 40px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 2px;
+            color: var(--white-color);
+        }
+        .home-product {
+            width: 100%;
+            background-color: #fff;
+            margin-top: 10px;
+        }
+        .gird-row {
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin: 0 auto;
+        }
+        .item-inner {
+            border-bottom: 1px solid ;
+            display: flex;
+            width: 100%;
+        }
+        .box-image-list {
+            height: 400px;
+            width: 30%;
+        }
+        .box-info-list {
+            height: 400px;
+            width: 70%;
+        }
+        .box-image-list img{
+            margin-top: 53%;
+            margin-left: 10%;
+            width: 80%;
+            height: auto;
+        }
+        .box-info-list {
+            width: 100%;
+        }
+        .box-info-list h3{
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .display {
+            width: 100%;
+            height: 400px;
+            display: flex;
+        }
+        .display ul li{
+            list-style: none;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        .left{
+            margin-top: 30px;
+            width: 30%;
+        }
+        .left li{
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #a1a0a0;
+        }
+        .padding-bottom {
+            padding-bottom: 34px;
+        }
+        .right{
+            width: 70%;
+            margin-top: 30px;
+        } 
+        .right li {
+            margin-bottom: 10px;
+        }
+        .box-cart {
+            background-color: #000;
+        }
+        .li-cart  {
+            display: flex;
+        }
+        .li-cart {
+            margin-top: 40px;
+        }
+        .li-cart span{
+            color: red;
+            font-size: 17px;
+            font-weight: 500;
+            margin-top: 10px;
+        } 
+        .li-cart input{
+            width: 50px;
+            text-align: center;
+            height: 40px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .li-cart button{
+            width: 100px;
+            background-color: #72cdf4;
+            color: #fff;
+            border: none;
+        }
+        .fa-microsoft{
+            color: #ccc;
+        }
+        .fa-list {
+            color: #72cdf4;
+        }
+        .header-logo {
+            width: 25%;
+            margin-top: 3px;
+        }
+        .header-login {
+            display: flex;
+        }
+        .fa-user {
+            color: #fff;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-top: 2px;
+        }
+        .header-logo {
+            width: 25%;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <!-- Header_top -->
+            <div class="header_top">
+                <div class="grid display-flex">
+                    <div class="header-holine">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="#">Holine: 0892536173</a>
+                    </div>
+                    <div class="header-login ">
+                        <i class="fa-solid fa-user"></i>
+                        <h3 class="header_top-login">nguyenvanduy</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Header_center -->
+            <div class="header_center">
+                <div class="grid display-flex">
+                    <a href="/Web-milk" class="header-logo">
+                        <img src="./img/logo1.png" alt="Logo ảnh">
+                    </a>
+                    <div class="header-search">
+                        <input class="header-search_input" type="text" placeholder="Tìm kiếm sản phẩm..." >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="header-cart">
+                        <a href="#" class="header-border">
+                            <!-- <span class="material-symbols-outlined shopping_cart">shopping_cart</span> -->
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <h3 class="header-cart_heading">Giỏ hàng</h3>
+                            <span class="btn">(0)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Heder-bottom -->
+            <div class="header-bottom">
+                <div class="grid">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li><a href="#">Danh mục</a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="#">Chương trình khuyết mại</a></li>
+                                        <li><a href="#">Mã khuyến mãi</a></li>
+                                        <li><a href="#">Sản phẩm phẩm thường mua</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Sản phẩm mới</a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#">Sữa tươi</a></li>
+                                        <li><a href="#">Sữa chua công thức</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Sản phẩm ưu thích</a></li>
+                            <li><a href="#">Danh sách cửa hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="article">
+            <!-- Grid -> row -> column-->
+            <div class="grid">
+                <div class="grid_row-wrap">
+                    <!-- grid-column-2 -->
+                    <div class="grid-column-2">
+                        <div class="category">
+                            <h3 class="category_heading">
+                                Lựa chọn mua sắm
+                            </h3>
+                            <ul class="category-list">
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item_link">Sữa tươi</a>
+                                </li>
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item_link">Sữa tươi tiệt trùng</a>
+                                </li>
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item_link">Sữa chua hữu cơ</a>
+                                </li>
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item_link">Sữa tươi công thức</a>
+                                </li>
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item_link">Sữa tươi lúa mạch</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- grid-column-10 -->
+                    <div class="grid-column-10">
+                        <!-- home-filter -->
+                        <div class="home-filter">
+                            <div class="home-filter_heading">
+                                SẢN PHẨM
+                            </div>
+                            <div class="home-filter_lable">
+                                <select name="" id="">
+                                    <option value="">Sản phẩm bán chạy</option>
+                                    <option value="">Sản phẩm giảm dần</option>
+                                    <option value="">Sản phẩm tăng dần</option>
+                                    <option value="">Sản phẩm mới nhất</option>
+                                </select>
+                                <a href="index.html">
+                                    <i class="fa-brands fa-microsoft"></i>
+                                </a>
+                                <i class="fa-solid fa-list"></i>
+                            </div>
+                        </div>
+                        <!-- home-product -->
+                        <div class="home-product">
+                            <div class="gird-row">
+                                <div class="item-inner">
+                                    <div class="box-image-list">
+                                        <img src="./img/thung-sua-lua-mach-th-true-chocomalt-mistori-180ml-1_1.jpg" alt="">
+                                    </div>
+                                    <div class="box-info-list">
+                                        <h3>Thùng sữa lúa mạch TH true CHOCOMALT MISTORI 180 ml x 48 hộp</h3>
+                                        <div class="display">
+                                            <ul class="left">
+                                                <li class="li_big li_big1">THƯƠNG HIỆU</li>
+                                                <li class="li_big">XUẤT XỨ THƯƠNG HIỆU</li>
+                                                <li class="li_big">NƠI SẢN XUẤT</li>
+                                                <li class="li_big  padding-bottom">THÀNH PHẦN</li>
+                                                <li class="li_big">HẠN SỬ DỤNG</li>
+                                                <li class="li_big" style="padding-bottom: 13px;">HƯỚNG DẪN SỬ DỤNG</li>
+                                                <li class="li_big">HƯỚNG DẪN BẢO QUẢN</li>
+                                                <li class="li_big  li_bigs">QUY CÁCH ĐÓNG GÓI</li>
+                                            </ul>
+                                            <ul class="right"style="font-weight: 500;">
+                                                <li classs="li_small">TH true CHOCOMALT MISTORI</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Nước, sữa hoàn toàn từ sữa bò tươi (25%), đường, chiết xuất lúa mạch (2,5%), bột cacao tách béo (0,7%), hương liệu tự nhiên, chất ổn định (471, 412, 418) khoáng chất (calci carbonat), vitamin (B6, B12, acid folic)</li>
+                                                <li classs="li_small">240 ngày kể từ ngày sản xuất</li>
+                                                <li classs="li_small">Sử dụng ngay sau khi mở Lắc đều trước khi sử dụng Nên dùng từ 2 - 3 hộp mỗi ngày Không dùng cho trẻ dưới 1 tuổi</li>
+                                                <li classs="li_small">Bảo quản nơi khô ráo và thoáng mát</li>
+                                                <li classs="li_small"> 1 thùng 12 lốc (48 hộp)</li>
+                                                <li class="li-cart">
+                                                    <span>865.000 đ</span>
+                                                    <input type="number" value="1">
+                                                    <button>Chọn mua</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="item-inner">
+                                    <div class="box-image-list">
+                                        <img src="./img/thung-sua-tuoi-tiet-trung-th-true-milk-gold.jpg" alt="">
+                                    </div>
+                                    <div class="box-info-list">
+                                        <h3>Thùng sữa tươi tiệt trùng vị tự nhiên TH true MILK GOLD 180 ml - Công thức dinh dưỡng cho người lớn tuổi</h3>
+                                        <div class="display">
+                                            <ul class="left">
+                                                <li class="li_big li_big1">THƯƠNG HIỆU</li>
+                                                <li class="li_big">XUẤT XỨ THƯƠNG HIỆU</li>
+                                                <li class="li_big">NƠI SẢN XUẤT</li>
+                                                <li class="li_big  padding-bottom">THÀNH PHẦN</li>
+                                                <li class="li_big">HẠN SỬ DỤNG</li>
+                                                <li class="li_big" style="padding-bottom: 13px;">HƯỚNG DẪN SỬ DỤNG</li>
+                                                <li class="li_big">HƯỚNG DẪN BẢO QUẢN</li>
+                                                <li class="li_big  li_bigs">QUY CÁCH ĐÓNG GÓI</li>
+                                            </ul>
+                                            <ul class="right"style="font-weight: 500;">
+                                                <li classs="li_small">TH true CHOCOMALT MISTORI</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Nước, sữa hoàn toàn từ sữa bò tươi (25%), đường, chiết xuất lúa mạch (2,5%), bột cacao tách béo (0,7%), hương liệu tự nhiên, chất ổn định (471, 412, 418) khoáng chất (calci carbonat), vitamin (B6, B12, acid folic)</li>
+                                                <li classs="li_small">240 ngày kể từ ngày sản xuất</li>
+                                                <li classs="li_small">Sử dụng ngay sau khi mở Lắc đều trước khi sử dụng Nên dùng từ 2 - 3 hộp mỗi ngày Không dùng cho trẻ dưới 1 tuổi</li>
+                                                <li classs="li_small">Bảo quản nơi khô ráo và thoáng mát</li>
+                                                <li classs="li_small"> 1 thùng 12 lốc (48 hộp)</li>
+                                                <li class="li-cart">
+                                                    <span>492.000 đ</span>
+                                                    <input type="number" value="1">
+                                                    <button>Chọn mua</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="item-inner">
+                                    <div class="box-image-list">
+                                        <img src="./img/thung-sua-lua-mach-th-true-chocomalt-mistori-180ml-1_1.jpg" alt="">
+                                    </div>
+                                    <div class="box-info-list">
+                                        <h3>Thùng sữa lúa mạch TH true CHOCOMALT MISTORI 180 ml x 48 hộp</h3>
+                                        <div class="display">
+                                            <ul class="left">
+                                                <li class="li_big li_big1">THƯƠNG HIỆU</li>
+                                                <li class="li_big">XUẤT XỨ THƯƠNG HIỆU</li>
+                                                <li class="li_big">NƠI SẢN XUẤT</li>
+                                                <li class="li_big  padding-bottom">THÀNH PHẦN</li>
+                                                <li class="li_big">HẠN SỬ DỤNG</li>
+                                                <li class="li_big" style="padding-bottom: 13px;">HƯỚNG DẪN SỬ DỤNG</li>
+                                                <li class="li_big">HƯỚNG DẪN BẢO QUẢN</li>
+                                                <li class="li_big  li_bigs">QUY CÁCH ĐÓNG GÓI</li>
+                                            </ul>
+                                            <ul class="right"style="font-weight: 500;">
+                                                <li classs="li_small">TH true CHOCOMALT MISTORI</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Nước, sữa hoàn toàn từ sữa bò tươi (25%), đường, chiết xuất lúa mạch (2,5%), bột cacao tách béo (0,7%), hương liệu tự nhiên, chất ổn định (471, 412, 418) khoáng chất (calci carbonat), vitamin (B6, B12, acid folic)</li>
+                                                <li classs="li_small">240 ngày kể từ ngày sản xuất</li>
+                                                <li classs="li_small">Sử dụng ngay sau khi mở Lắc đều trước khi sử dụng Nên dùng từ 2 - 3 hộp mỗi ngày Không dùng cho trẻ dưới 1 tuổi</li>
+                                                <li classs="li_small">Bảo quản nơi khô ráo và thoáng mát</li>
+                                                <li classs="li_small"> 1 thùng 12 lốc (48 hộp)</li>
+                                                <li class="li-cart">
+                                                    <span>492.000 đ</span>
+                                                    <input type="number" value="1">
+                                                    <button>Chọn mua</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="item-inner">
+                                    <div class="box-image-list">
+                                        <img src="./img/uht_hilo_180_thung_2_800x800.jpg" alt="">
+                                    </div>
+                                    <div class="box-info-list">
+                                        <h3>THÙNG SỮA TƯƠI TIỆT TRÙNG TH TRUE MILK HILO 180 ML X 48 HỘP</h3>
+                                        <div class="display">
+                                            <ul class="left">
+                                                <li class="li_big li_big1">THƯƠNG HIỆU</li>
+                                                <li class="li_big">XUẤT XỨ THƯƠNG HIỆU</li>
+                                                <li class="li_big">NƠI SẢN XUẤT</li>
+                                                <li class="li_big  padding-bottom">THÀNH PHẦN</li>
+                                                <li class="li_big">HẠN SỬ DỤNG</li>
+                                                <li class="li_big" style="padding-bottom: 13px;">HƯỚNG DẪN SỬ DỤNG</li>
+                                                <li class="li_big">HƯỚNG DẪN BẢO QUẢN</li>
+                                                <li class="li_big  li_bigs">QUY CÁCH ĐÓNG GÓI</li>
+                                            </ul>
+                                            <ul class="right"style="font-weight: 500;">
+                                                <li classs="li_small">TH true CHOCOMALT MISTORI</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Việt Nam</li>
+                                                <li classs="li_small">Nước, sữa hoàn toàn từ sữa bò tươi (25%), đường, chiết xuất lúa mạch (2,5%), bột cacao tách béo (0,7%), hương liệu tự nhiên, chất ổn định (471, 412, 418) khoáng chất (calci carbonat), vitamin (B6, B12, acid folic)</li>
+                                                <li classs="li_small">240 ngày kể từ ngày sản xuất</li>
+                                                <li classs="li_small">Sử dụng ngay sau khi mở Lắc đều trước khi sử dụng Nên dùng từ 2 - 3 hộp mỗi ngày Không dùng cho trẻ dưới 1 tuổi</li>
+                                                <li classs="li_small">Bảo quản nơi khô ráo và thoáng mát</li>
+                                                <li classs="li_small"> 1 thùng 12 lốc (48 hộp)</li>
+                                                <li class="li-cart">
+                                                    <span>411.000 đ</span>
+                                                    <input type="number" value="1">
+                                                    <button>Chọn mua</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pagination -->
+                        <div class="pagination home-product_pagination">
+                            <!-- pagination-item -->
+                            <li class="pagination-item">
+                                <a href="index.html" class="pagination-item_link">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="pagination-item pagination-item-active">
+                                <a href="#" class="pagination-item_link">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">3</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">4</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">5</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">...</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="#" class="pagination-item_link">9</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="change-scene2.html" class="pagination-item_link">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <!-- gird -->
+            <div class="grid">
+                <!-- grid_row -->
+                <div class="grid_row-wrap">
+                    <!-- grid-column-2-5 -->
+                    <div class="grid-column-2-5">
+                        <h3 class="footer_heading">Hạnh phúc trong từng loại sữa</h3>
+                        <div class="footer_logo">
+                            <img src="./img/logo1.png" alt="" class="footer_logo-img">
+                        </div>
+                    </div>
+                    <div class="grid-column-2-5">
+                        <h3 class="footer_heading">Hỗ chợ khách hàng khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Bảo mật thông tin</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Chính sách giao hàng</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Hướng dẫn đặt hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-column-2-5">
+                        <h3 class="footer_heading">Mã khuyết mãi</h3>
+                        <h3 class="footer_heading">Chương trình khuyết mãi</h3>
+                        <h3 class="footer_heading">Khảo sát</h3>
+                    </div>
+                    <div class="grid-column-2-5">
+                        <h3 class="footer_heading">Danh mục</h3>
+                        <ul class="footer-list">
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Sữa tươi</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Sữa tươi tiệt trùng</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Sữa tươi hữu cơ</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Sữa tươi công thức</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">Sữa tươi lúa mạch</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-column-2-5">
+                        <h3 class="footer_heading">Theo dõi chúng tôi</h3>
+                        <ul class="footer-list">
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    Instagram</a>
+                            </li>
+                            <li class="foote-item">
+                                <a href="#" class="foote-item_link">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    Linkedln
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="grid">
+                        <p class="footer-text">© 2023 Bản quyền thuộc về cá nhân - Website được tạo ra vì mục đích học tập, không vì mục đích thương mại</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
