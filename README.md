@@ -5,6 +5,4 @@
 ![demo](./img/demo%20web%20miik.png)
 
 [Live demo](https://nguyenvanduydev001.github.io/Milk/)
-=======
-https://nguyenvanduydev001.github.io/Milk/
 
